@@ -1,0 +1,13 @@
+name: CSV File Update
+on:
+  push:
+    paths:
+      - '"d:\HUKP\Desktop\Workspace\Baza danych\SzF\PROGNOZA_R.CSV"'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Update CSV
+      run: git add data.csv && git commit -m "Update CSV" && git push
